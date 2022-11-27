@@ -1,3 +1,24 @@
-Welcome to my first Vue.js application. However, it's still under development and unfortunately a lot of things still don't work.
+# quanti-project
 
-As a backend I use json-server, to start it use the command npm run backend and to start the server itself npm run serve.
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

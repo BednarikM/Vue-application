@@ -1,0 +1,31 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "task": "Doctors Appointment",
+      "firstname": "John",
+      "lastname": "Jonhnson",
+      "startday": "2022-10-08",
+      "lastday": "2022-11-30",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "task": "Project Deadline",
+      "firstname": "Peter",
+      "lastname": "Hashmapson",
+      "startday": "2022-08-19",
+      "lastday": "2022-09-27",
+      "reminder": true
+    },
+    {
+      "id": 3,
+      "task": "Teambuilding",
+      "firstname": "Marcus",
+      "lastname": "Teamspiritson",
+      "startday": "2023-01-03",
+      "lastday": "2022-01-08",
+      "reminder": true
+    }
+  ]
+}
