@@ -147,6 +147,7 @@ export default {
         }
         resolve();
       }).then(() => {
+        alert("Your task has been successfully submitted, you will be redirected to the home page");
         this.$router.push("/");
       });
     },
