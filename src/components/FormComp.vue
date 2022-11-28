@@ -113,37 +113,42 @@ export default {
         return acc;
       }, {});
 
-      if (this.mode === "edit") {
-        Object.assign(formOutput, {
-          startday: formatDate(formOutput.startday),
-          lastday: formatDate(formOutput.lastday),
-          reminder: this.remindeValue,
-          id: extractedId,
-        });
+      new Promise((resolve) => {
+        if (this.mode === "edit") {
+          Object.assign(formOutput, {
+            startday: formatDate(formOutput.startday),
+            lastday: formatDate(formOutput.lastday),
+            reminder: this.remindeValue,
+            id: extractedId,
+          });
 
-        fetch(`http://localhost:5000/tasks/${extractedId}`, {
-          method: "PATCH",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify(formOutput),
-        });
-      } else {
-        Object.assign(formOutput, {
-          startday: formatDate(formOutput.startday),
-          lastday: formatDate(formOutput.lastday),
-          reminder: this.remindeValue,
-          id: Math.floor(Math.random() * 10000) + 1,
-        });
+          fetch(`http://localhost:5000/tasks/${extractedId}`, {
+            method: "PATCH",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify(formOutput),
+          });
+        } else {
+          Object.assign(formOutput, {
+            startday: formatDate(formOutput.startday),
+            lastday: formatDate(formOutput.lastday),
+            reminder: this.remindeValue,
+            id: Math.floor(Math.random() * 10000) + 1,
+          });
 
-        fetch("http://localhost:5000/tasks", {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify(formOutput),
-        });
-      }
+          fetch("http://localhost:5000/tasks", {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify(formOutput),
+          });
+        }
+        resolve();
+      }).then(() => {
+        this.$router.push("/");
+      });
     },
   },
 
